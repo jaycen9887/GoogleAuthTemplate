@@ -17,12 +17,27 @@ const app = express();
 //set view engine
 app.set('view engine', "ejs");
 
+//encrypt cookies - save for 24 hours
+app.use(cookieSession({
+    maxAge: 24 * 60 * 60 * 1000,
+    keys: [keys.session.cookieKey]
+}));
+
+//initialize passport 
+app.use(passport.initialize());
+app.use(passport.session());
+
+//connet to mongodb
+mongoose.connect(keys.mongodb.dbURI, () => {
+    console.log('connected to mongodb database');
+});
+
 //setup routes
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 
-app.get('/', (res, res) => {
+app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.listen
+app.listen(PORT, () => {console.log('App listening on port ' + PORT)});
