@@ -49,18 +49,19 @@
     <body>
         <nav class="nav">
             <ul>   
+                <% if(user){ %>   
                 <li><a href="/auth/logout">Logout</a></li>
+                <% } else { %>
                 <li><a href="/auth/login">Login</a></li>
-                <li><a href="/">Homepage</a></li>
-                <li><a href="/profile">Profile</a></li>
+                <% } %>
             </ul>
         </nav>
         <header>
-            <h1>Welcome, <!-- Insert Google Profiles Display Name here --></h1>
+            <h1>Welcome, <%= user.username %></h1>
         </header>
         <main>
             <p>Profile thumbnail below: </p>
-            <!-- Insert Google Profiles Thumbnail image here -->
+            <img src="<%= user.thumbnail %>">
         </main>
     </body>
 </html>
