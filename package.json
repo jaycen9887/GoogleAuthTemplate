@@ -1,0 +1,19 @@
+{
+  "name": "googleauthtemplate",
+  "version": "1.0.0",
+  "description": "Template for Google Authentication using PassportJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaycen9887/GoogleAuthTemplate.git"
+  },
+  "author": "Jaycen Milling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaycen9887/GoogleAuthTemplate/issues"
+  },
+  "homepage": "https://github.com/jaycen9887/GoogleAuthTemplate#readme"
+}
